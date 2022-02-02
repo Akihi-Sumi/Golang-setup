@@ -1,0 +1,10 @@
+version: '3'
+services:
+  goapp: # サービス名
+    build: # ビルドに使うDockerファイルのパス
+      context: .
+      dockerfile: Dockerfile
+    tty: true # コンテナの永続化
+    working_dir: /workspace
+    volumes:
+      - ./cmd:/go/src/app
